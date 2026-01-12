@@ -1,4 +1,3 @@
-# AI_Phishing_Analyzer
 # 🛡️ AI-Powered Phishing Analyzer
 
 An advanced phishing detection system that leverages artificial intelligence, natural language processing, and multiple security APIs to analyze URLs and emails for potential phishing threats.

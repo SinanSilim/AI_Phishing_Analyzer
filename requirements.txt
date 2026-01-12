@@ -1,0 +1,44 @@
+# Core Dependencies
+openai>=1.12.0
+python-whois>=0.8.0
+dnspython>=2.4.2
+requests>=2.31.0
+PyYAML>=6.0.1
+
+# NLP and Text Analysis
+nltk>=3.8.1
+textblob>=0.17.1
+vaderSentiment>=3.3.2
+
+# SSL and Security
+pyOpenSSL>=24.0.0
+cryptography>=42.0.0
+certifi>=2024.2.2
+
+# URL Processing
+tldextract>=5.1.1
+validators>=0.22.0
+urllib3>=2.2.0
+
+# GUI
+tkinter-tooltip>=2.1.0
+
+# Data Processing
+pandas>=2.0.0
+
+# API Rate Limiting
+ratelimit>=2.2.1
+
+# Progress Bars
+tqdm>=4.66.0
+
+# Async Support
+aiohttp>=3.9.0
+
+# Testing (optional)
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# Code Quality (optional)
+black>=24.0.0
+flake8>=7.0.0

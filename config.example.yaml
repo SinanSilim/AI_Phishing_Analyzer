@@ -1,0 +1,136 @@
+# AI Phishing Analyzer Configuration File
+# Copy this file to 'config.yaml' and add your API keys
+
+# OpenAI Configuration
+openai_api_key: "YOUR_OPENAI_API_KEY_HERE"  # Get from https://platform.openai.com/api-keys
+openai_model: "gpt-4o-mini"  # Options: gpt-4, gpt-4o-mini, gpt-3.5-turbo (cheaper)
+openai_temperature: 0.3  # Lower = more focused, higher = more creative
+openai_max_tokens: 500
+
+# Have I Been Pwned Configuration
+hibp_api_key: ""  # Optional - Get from https://haveibeenpwned.com/API/Key
+hibp_user_agent: "AI-Phishing-Analyzer"
+
+# Analysis Settings
+risk_thresholds:
+  low: 25      # 0-25: Low risk
+  medium: 50   # 26-50: Medium risk
+  high: 75     # 51-75: High risk
+  # 76-100: Critical risk
+
+# Feature Toggles
+enable_llm_analysis: true      # Use OpenAI for advanced text analysis
+enable_hibp_check: true        # Check email addresses against breach database
+enable_dns_check: true         # Perform DNS/MX record checks
+enable_ssl_check: true         # Verify SSL certificates
+enable_whois_check: true       # Check domain registration info
+enable_blacklist_check: true   # Check against known malicious domains
+
+# Timeout Settings (in seconds)
+ssl_check_timeout: 10
+whois_timeout: 15
+dns_timeout: 10
+api_timeout: 30
+overall_timeout: 60
+
+# URL Analysis Weights (must sum to 1.0)
+url_weights:
+  domain_age: 0.25        # Weight for domain age analysis
+  ssl_certificate: 0.20   # Weight for SSL validation
+  dns_check: 0.15         # Weight for DNS analysis
+  blacklist: 0.25         # Weight for blacklist presence
+  url_pattern: 0.15       # Weight for suspicious URL patterns
+
+# Email Analysis Weights (must sum to 1.0)
+email_weights:
+  sentiment: 0.20         # Weight for sentiment analysis
+  keywords: 0.20          # Weight for suspicious keywords
+  urgency: 0.15           # Weight for urgency indicators
+  llm_analysis: 0.30      # Weight for LLM threat assessment
+  structure: 0.15         # Weight for email structure analysis
+
+# Domain Age Thresholds
+domain_age:
+  very_new: 7      # Days - Very suspicious
+  new: 30          # Days - Suspicious
+  established: 180 # Days - More trustworthy
+
+# Suspicious Keywords (case-insensitive)
+suspicious_keywords:
+  - urgent
+  - immediate action
+  - verify your account
+  - suspended
+  - confirm your identity
+  - click here now
+  - limited time
+  - expire
+  - security alert
+  - unauthorized
+  - unusual activity
+  - reset your password
+  - billing problem
+  - payment failed
+  - prize
+  - congratulations
+  - winner
+  - claim your
+  - act now
+  - don't ignore
+
+# Legitimate Domain Patterns (whitelist)
+trusted_domains:
+  - google.com
+  - microsoft.com
+  - apple.com
+  - amazon.com
+  - github.com
+  - linkedin.com
+
+# Known Phishing TLDs (higher risk)
+suspicious_tlds:
+  - .tk
+  - .ml
+  - .ga
+  - .cf
+  - .gq
+  - .xyz
+  - .top
+  - .work
+  - .click
+  - .link
+
+# Typosquatting Target Domains
+typosquat_targets:
+  - paypal
+  - google
+  - amazon
+  - microsoft
+  - apple
+  - facebook
+  - instagram
+  - twitter
+  - linkedin
+  - netflix
+  - bank
+  - chase
+  - wellsfargo
+  - citibank
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: phishing_analyzer.log
+  console: true
+
+# Rate Limiting
+rate_limits:
+  openai_calls_per_minute: 10
+  hibp_calls_per_minute: 1
+  whois_calls_per_minute: 5
+
+# Cache Settings
+cache:
+  enabled: true
+  ttl: 3600  # Cache time-to-live in seconds (1 hour)
+  max_size: 1000  # Maximum cache entries

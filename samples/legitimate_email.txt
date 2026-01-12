@@ -1,0 +1,33 @@
+Subject: Your Recent Order Confirmation
+
+Hi John,
+
+Thank you for your recent purchase from our store!
+
+Your order #123456 has been confirmed and is being processed. Here are the details:
+
+Order Date: January 12, 2026
+Expected Delivery: January 18-20, 2026
+
+Items:
+- Product A (Quantity: 1)
+- Product B (Quantity: 2)
+
+Total: $49.99
+
+You can track your order status by logging into your account at:
+https://www.ourstore.com/account/orders
+
+If you have any questions about your order, please feel free to contact our customer service team at support@ourstore.com or call us at 1-800-555-0123.
+
+We appreciate your business!
+
+Best regards,
+Customer Service Team
+Our Store Inc.
+123 Business Street
+City, State 12345
+
+---
+You're receiving this email because you made a purchase at ourstore.com
+To manage your email preferences: https://www.ourstore.com/account/settings
